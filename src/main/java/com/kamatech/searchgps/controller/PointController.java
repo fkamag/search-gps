@@ -1,5 +1,6 @@
 package com.kamatech.searchgps.controller;
 
+import com.kamatech.searchgps.model.Location;
 import com.kamatech.searchgps.model.Point;
 import com.kamatech.searchgps.service.PointService;
 import java.util.List;
@@ -27,6 +28,9 @@ public class PointController {
     return this.service.getAll();
   }
 
-
+  @GetMapping("/nearby")
+  public List<Point> getNearby(@RequestBody Location location) {
+    return this.service.getNearby(location);
+  }
 
 }
